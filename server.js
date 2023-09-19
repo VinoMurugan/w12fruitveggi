@@ -72,6 +72,35 @@ app.get('/vegetables/', (req, res) => {
       }
 });
 
+
+//new - get the form to add a new fruit
+app.get('/vegetables/new', (req, res) => {
+    res.render('vegetables/New');
+});
+
+//DELETE
+
+
+//UPDATE
+
+
+//CREATE
+app.post('/vegetables', (req, res)=>{
+    if(req.body.readyToEat === 'on'){ //if checked, req.body.readyToEat is set to 'on'
+        req.body.readyToEat = true; //do some data correction
+    } else { //if not checked, req.body.readyToEat is undefined
+        req.body.readyToEat = false; //do some data correction
+    }
+    vegetables.push(req.body);
+    console.log(vegetables);
+    res.send('data received');
+});
+
+
+
+//EDIT
+
+
 app.get('/vegetables/:indexOfFruitsArray', (req, res) => {
     // res.send(fruits[req.params.indexOfFruitsArray]);
     res.render('vegetables/show',{
