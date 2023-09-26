@@ -1,3 +1,4 @@
+
 const fruits = [
     {
         name:'apple',
@@ -24,3 +25,6 @@ const fruits = [
 
 //at the bottom of /models/fruits.js
 module.exports = fruits;
+
+
+
